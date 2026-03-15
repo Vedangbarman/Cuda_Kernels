@@ -1,0 +1,137 @@
+user:./sgemm
+
+Benchmarking vectorized GPU implementation...
+
+Benchmarking Warptailing GPU implementation...
+
+Benchmarking 2D Blocktilling GPU implementation...
+
+Benchmarking Naive GPU implementation...
+
+Naive GPU average time: 401.298950 microseconds
+
+2D Blocktilling GPU average time: 339.806800 microseconds
+
+Vectorrized GPU average time: 327.051950 microseconds
+
+Warptailing GPU average time: 270.505550 microseconds
+
+user:nvcc autotuned.cu -o sgemm -O3 -arch=sm_86
+
+user:./sgemm
+
+Benchmarking vectorized GPU implementation...
+
+Benchmarking Warptailing GPU implementation...
+
+Benchmarking 2D Blocktilling GPU implementation...
+
+Benchmarking Naive GPU implementation...
+
+Naive GPU average time: 951.680050 microseconds
+
+2D Blocktilling GPU average time: 548.318650 microseconds
+
+Vectorrized GPU average time: 253.995450 microseconds
+
+Warptailing GPU average time: 267.409600 microseconds
+
+user:nvcc autotuned.cu -o sgemm -O3 -arch=sm_86
+
+user:./sgemm
+
+Benchmarking vectorized GPU implementation...
+
+Benchmarking Warptailing GPU implementation...
+
+Benchmarking 2D Blocktilling GPU implementation...
+
+Benchmarking Naive GPU implementation...
+
+Naive GPU average time: 5799.171650 microseconds
+
+2D Blocktilling GPU average time: 1893.857000 microseconds
+
+Vectorrized GPU average time: 1045.410750 microseconds
+
+Warptailing GPU average time: 1025.407450 microseconds
+
+user:nvcc autotuned.cu -o sgemm -O3 -arch=sm_86
+
+user:./sgemm
+
+Benchmarking vectorized GPU implementation...
+
+Benchmarking Warptailing GPU implementation...
+
+Benchmarking 2D Blocktilling GPU implementation...
+
+Benchmarking Naive GPU implementation...
+
+Naive GPU average time: 37181.131750 microseconds
+
+2D Blocktilling GPU average time: 10046.314400 microseconds
+
+Vectorrized GPU average time: 6507.350000 microseconds
+
+Warptailing GPU average time: 6143.372750 microseconds
+
+user:nvcc autotuned.cu -o sgemm -O3 -arch=sm_86
+
+user:./sgemm
+
+Benchmarking vectorized GPU implementation...
+
+Benchmarking Warptailing GPU implementation...
+
+Benchmarking 2D Blocktilling GPU implementation...
+
+Benchmarking Naive GPU implementation...
+
+Naive GPU average time: 300097.210650 microseconds
+
+2D Blocktilling GPU average time: 66804.756800 microseconds
+
+Vectorrized GPU average time: 41442.985300 microseconds
+
+Warptailing GPU average time: 38015.526350 microseconds
+
+user:nvcc autotuned.cu -o sgemm -O3 -arch=sm_86
+
+user:./sgemm
+
+Benchmarking vectorized GPU implementation...
+
+Benchmarking Warptailing GPU implementation...
+
+Benchmarking 2D Blocktilling GPU implementation...
+
+Benchmarking Naive GPU implementation...
+
+Naive GPU average time: 2612513.940100 microseconds
+
+2D Blocktilling GPU average time: 563063.183600 microseconds
+
+Vectorrized GPU average time: 323278.857300 microseconds
+
+Warptailing GPU average time: 311290.230950 microseconds
+
+user:nvcc autotuned.cu -o sgemm -O3 -arch=sm_86
+
+user:./sgemm
+
+Benchmarking vectorized GPU implementation...
+
+Benchmarking Warptailing GPU implementation...
+
+Benchmarking 2D Blocktilling GPU implementation...
+
+Benchmarking Naive GPU implementation...
+
+Naive GPU average time: 20918648.308550 microseconds
+
+2D Blocktilling GPU average time: 4396641.473900 microseconds
+
+Vectorrized GPU average time: 2717967.210700 microseconds
+
+Warptailing GPU average time: 2515279.350950 microseconds
