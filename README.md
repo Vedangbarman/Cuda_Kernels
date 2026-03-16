@@ -65,18 +65,24 @@ Hides memory latency by overlapping data fetching with computation. While the GP
 
 ## 📂 Code Structure
 
-The core implementation includes:
+The repository is organized into the following key files:
 
-* **`matmul_naive`**: Baseline global memory implementation.
-* **`matmultiled_2d`**: 2D shared memory tiling.
-* **`vectorize`**: Tiled implementation using `float4` vectorized memory loads.
-* **`sgemmDoubleBuffered`**: Advanced double buffering implementation bridging the gap to cuBLAS.
-* **Benchmarking Suite**: A robust testing framework measuring average kernel execution time across multiple iterations to ensure accuracy.
+* **`autotuned.cu`**: Contains and benchmarks the complete custom kernel progression (from the Naive baseline up to Warptailing).
+* **`cublas_bench.cu`**: Performance face-off comparing our optimized Warptailing kernel directly against NVIDIA's cuBLAS library.
+* **`double_buff.cu`**: Implements and benchmarks the advanced full double buffering kernel against cuBLAS.
+* **`vector_add.cu`**: A foundational vector addition implementation.
+* **`graph.py`**: Python scripts used to generate the performance and TFLOPS visualization graphs for benchmarking.
+* **`result.txt`**: Raw execution time logs and benchmarking results for the custom kernel progression.
 
 ### Compilation
 
-To compile the auto-tuned kernel on an Ampere architecture system (like the RTX 3050):
+To compile the kernels on an Ampere architecture system (like the RTX 3050), use the following commands depending on the benchmark you want to run. Ensure you link the cuBLAS library where necessary.
 
 ```bash
-nvcc autotuned.cu -o sgemm -O3 -arch=sm_86
-./sgemm
+# For Custom Kernel Progression
+nvcc autotuned.cu -o autotuned_bench -O3 -arch=sm_86
+./autotuned_bench
+
+# For cuBLAS & Double Buffering Benchmarks (requires linking -lcublas)
+nvcc double_buff.cu -lcublas -o dbuff_bench -O3 -arch=sm_86
+./dbuff_bench
