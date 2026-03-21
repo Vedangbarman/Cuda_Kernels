@@ -4,13 +4,10 @@
 #include <cuda_runtime.h>
 #include <math.h>
 
-#define N 10000000  // Vector size = 10 million
+#define N 10000000 
 #define BLOCK_SIZE 256
 
-// Example:
-// A = [1, 2, 3, 4, 5]
-// B = [6, 7, 8, 9, 10]
-// C = A + B = [7, 9, 11, 13, 15]
+
 
 // CPU vector addition
 void vector_add_cpu(float *a, float *b, float *c, int n) {
