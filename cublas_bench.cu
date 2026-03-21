@@ -270,7 +270,7 @@ int main(){
     printf("Warming up cuBLAS...\n");
     cublasSgemm(handle, CUBLAS_OP_N, CUBLAS_OP_N, N, M, K, &alpha, B, N, A, K, &beta, C, N);
     
-    // We also need to warm up HGEMM, so do the conversions here too if you haven't
+    
     __half alpha_h_warmup = __float2half(alpha);
     __half beta_h_warmup  = __float2half(beta);
     cublasHgemm(handle, CUBLAS_OP_N, CUBLAS_OP_N, N, M, K, &alpha_h_warmup, d_B_h, N, d_A_h, K, &beta_h_warmup, d_C_h, N);
