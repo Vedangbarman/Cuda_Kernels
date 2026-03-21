@@ -198,7 +198,6 @@ void run_benchmark(int size, cublasHandle_t handle) {
     double t_naive = 0, t_wrap = 0, t_sgemm = 0, t_hgemm = 0;
     const int iter = 10;
 
-    // Warning: This will be very slow for size 16384
     for(int i = 0; i < iter; i++) { 
         double s = get_time(); 
         dim3 grid(CEIL_DIV(size, 16), CEIL_DIV(size, 16));
